@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1e24089028f1d05c40a5bf399f15bb7",
+    "content-hash": "06298be2fdd1271fc7c42e45e64a31f9",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -467,6 +467,124 @@
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
+            "name": "jaybizzle/crawler-detect",
+            "version": "v1.2.84",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JayBizzle/Crawler-Detect.git",
+                "reference": "b7f35477a56609dd0d753c07ada912b66af3df01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/b7f35477a56609dd0d753c07ada912b66af3df01",
+                "reference": "b7f35477a56609dd0d753c07ada912b66af3df01",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.5|^6.5",
+                "satooshi/php-coveralls": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jaybizzle\\CrawlerDetect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Beech",
+                    "email": "m@rkbee.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CrawlerDetect is a PHP class for detecting bots/crawlers/spiders via the user agent",
+            "homepage": "https://github.com/JayBizzle/Crawler-Detect/",
+            "keywords": [
+                "crawler",
+                "crawler detect",
+                "crawler detector",
+                "crawlerdetect",
+                "php crawler detect"
+            ],
+            "time": "2019-06-14T21:10:21+00:00"
+        },
+        {
+            "name": "jenssegers/agent",
+            "version": "v2.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/agent.git",
+                "reference": "bcb895395e460478e101f41cdab139c48dc721ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/agent/zipball/bcb895395e460478e101f41cdab139c48dc721ce",
+                "reference": "bcb895395e460478e101f41cdab139c48dc721ce",
+                "shasum": ""
+            },
+            "require": {
+                "jaybizzle/crawler-detect": "^1.2",
+                "mobiledetect/mobiledetectlib": "^2.7.6",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^5.0|^6.0|^7.0"
+            },
+            "suggest": {
+                "illuminate/support": "^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Jenssegers\\Agent\\AgentServiceProvider"
+                    ],
+                    "aliases": {
+                        "Agent": "Jenssegers\\Agent\\Facades\\Agent"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jenssegers\\Agent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "https://jenssegers.com"
+                }
+            ],
+            "description": "Desktop/mobile user agent parser with support for Laravel, based on Mobiledetect",
+            "homepage": "https://github.com/jenssegers/agent",
+            "keywords": [
+                "Agent",
+                "browser",
+                "desktop",
+                "laravel",
+                "mobile",
+                "platform",
+                "user agent",
+                "useragent"
+            ],
+            "time": "2019-01-19T21:32:55+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v5.8.30",
             "source": {
@@ -682,10 +800,12 @@
             "source": {
                 "type": "git",
                 "url": "D:\\03.WorkSpace\\P.Packages\\lib-helpers-php",
-                "reference": "89e7366914f9da540b4938004a71f530445c25b4"
+                "reference": "a0eee802135bf6d910d471706279c4407a03c1c6"
             },
             "require": {
-                "php": "^5.3|^7.0"
+                "php": "^5.3|^7.0",
+                "ramsey/uuid": "3.x-dev",
+                "symfony/http-foundation": "^4.2"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.5"
@@ -721,18 +841,20 @@
                 "helper",
                 "php"
             ],
-            "time": "2019-07-31T11:42:54+00:00"
+            "time": "2019-07-31T18:28:43+00:00"
         },
         {
-            "name": "lazylogic/laravel-lib",
+            "name": "lazylogic/laravel-additive",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "D:\\03.WorkSpace\\P.Packages\\lib-laravel",
-                "reference": "609590197ddbb51c1af3283b13d34c4230a9cdb2"
+                "url": "D:\\03.WorkSpace\\P.Packages\\laravel-additive",
+                "reference": "0cc45f188375e0481d1eb25e50fa7b3918bef397"
             },
             "require": {
-                "php": "^7.1.3"
+                "lazylogic/helpers": "dev-master",
+                "php": "^7.1.3",
+                "spatie/laravel-cors": "^1.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.5"
@@ -741,14 +863,19 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Lazylogic\\Providers\\ResponseMacroServiceProvider"
+                        "Lazylogic\\Additive\\Providers\\ResponseMacroServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Lazylogic\\": "src/"
-                }
+                },
+                "files": [
+                    "src/Helpers/route_helper.php",
+                    "src/Helpers/string_helper.php",
+                    "src/Helpers/utils_helper.php"
+                ]
             },
             "autoload-dev": {
                 "psr-4": {
@@ -765,13 +892,13 @@
                 }
             ],
             "description": "php library for laravel",
-            "homepage": "https://github.com/lazylogic/laravel-lib",
+            "homepage": "https://github.com/lazylogic/laravel-additive",
             "keywords": [
-                "helper",
+                "enhance",
                 "laravel",
                 "php"
             ],
-            "time": "2019-07-31T11:55:57+00:00"
+            "time": "2019-07-31T19:18:16+00:00"
         },
         {
             "name": "league/flysystem",
@@ -856,6 +983,58 @@
                 "storage"
             ],
             "time": "2019-06-18T20:09:29+00:00"
+        },
+        {
+            "name": "mobiledetect/mobiledetectlib",
+            "version": "2.8.33",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/serbanghita/Mobile-Detect.git",
+                "reference": "cd385290f9a0d609d2eddd165a1e44ec1bf12102"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/cd385290f9a0d609d2eddd165a1e44ec1bf12102",
+                "reference": "cd385290f9a0d609d2eddd165a1e44ec1bf12102",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.35||~5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Mobile_Detect.php"
+                ],
+                "psr-0": {
+                    "Detection": "namespaced/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Serban Ghita",
+                    "role": "Developer",
+                    "email": "serbanghita@gmail.com",
+                    "homepage": "http://mobiledetect.net"
+                }
+            ],
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "keywords": [
+                "detect mobile devices",
+                "mobile",
+                "mobile detect",
+                "mobile detector",
+                "php mobile detect"
+            ],
+            "time": "2018-09-01T15:05:15+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1429,19 +1608,20 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.8.0",
+            "version": "3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "d09ea80159c1929d75b3f9c60504d613aeb4a1e3"
+                "reference": "4c467ce4d5a72c3cf0832c813d4d84d222c3d4bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/d09ea80159c1929d75b3f9c60504d613aeb4a1e3",
-                "reference": "d09ea80159c1929d75b3f9c60504d613aeb4a1e3",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/4c467ce4d5a72c3cf0832c813d4d84d222c3d4bb",
+                "reference": "4c467ce4d5a72c3cf0832c813d4d84d222c3d4bb",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "paragonie/random_compat": "^1.0|^2.0|9.99.99",
                 "php": "^5.4 || ^7.0",
                 "symfony/polyfill-ctype": "^1.8"
@@ -1507,7 +1687,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2018-07-19T23:38:55+00:00"
+            "time": "2018-08-12T15:49:01+00:00"
         },
         {
             "name": "spatie/laravel-cors",
@@ -4809,7 +4989,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "lazylogic/helpers": 20,
-        "lazylogic/laravel-lib": 20
+        "lazylogic/laravel-additive": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

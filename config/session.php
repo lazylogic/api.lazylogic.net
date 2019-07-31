@@ -127,7 +127,7 @@ return [
     'cookie'          => env(
         'SESSION_COOKIE',
         // Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
-        ( env( 'APP_ENV' ) == 'production' ? '' : env( 'APP_ENV' ) ) . '_l2_session'
+        ( env( 'APP_ENV' ) == 'production' ? '' : env( 'APP_ENV' ) ) . '_lz_session'
     ),
 
     /*
