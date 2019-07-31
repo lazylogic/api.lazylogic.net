@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a08e8898ee01d4c501404a147417c94b",
+    "content-hash": "c1e24089028f1d05c40a5bf399f15bb7",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -682,7 +682,7 @@
             "source": {
                 "type": "git",
                 "url": "D:\\03.WorkSpace\\P.Packages\\lib-helpers-php",
-                "reference": "75752a1d8a77fd0eba3fda4f11a1161f70915c39"
+                "reference": "89e7366914f9da540b4938004a71f530445c25b4"
             },
             "require": {
                 "php": "^5.3|^7.0"
@@ -719,10 +719,59 @@
             "homepage": "https://github.com/lazylogic/lib-helpers-php",
             "keywords": [
                 "helper",
+                "php"
+            ],
+            "time": "2019-07-31T11:42:54+00:00"
+        },
+        {
+            "name": "lazylogic/laravel-lib",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "D:\\03.WorkSpace\\P.Packages\\lib-laravel",
+                "reference": "609590197ddbb51c1af3283b13d34c4230a9cdb2"
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lazylogic\\Providers\\ResponseMacroServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lazylogic\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Lazylogic\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "razy",
+                    "email": "razy.dev@gmail.com"
+                }
+            ],
+            "description": "php library for laravel",
+            "homepage": "https://github.com/lazylogic/laravel-lib",
+            "keywords": [
+                "helper",
                 "laravel",
                 "php"
             ],
-            "time": "2019-07-31T09:46:28+00:00"
+            "time": "2019-07-31T11:55:57+00:00"
         },
         {
             "name": "league/flysystem",
@@ -4759,7 +4808,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "lazylogic/helpers": 20
+        "lazylogic/helpers": 20,
+        "lazylogic/laravel-lib": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
