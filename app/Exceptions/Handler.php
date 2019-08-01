@@ -49,15 +49,20 @@ class Handler extends ExceptionHandler
      */
     public function render( $request, Exception $exception )
     {
-        // TODO : $request->expectsJson()
+        if ( $request->expectsJson() || $request->segment( 1 ) == 'api' ) {
+            return $this->responseJson( $exception );
+        }
+
         return parent::render( $request, $exception );
     }
 
-    protected function unauthenticated( $request, AuthenticationException $exception )
+    protected function responseJson( Exception $e )
     {
-        if ( $request->expectsJson() || in_array( 'api', $exception->guards() ) ) {
+        if ( $e instanceof AuthenticationException ) {
             return Response::unauthorized( lang( 'auth.unauthorized' ) );
         }
-        parent::unauthenticated( $request, $exception );
+
+        return Response::exception( $e );
     }
+
 }
