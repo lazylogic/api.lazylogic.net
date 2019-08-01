@@ -33,17 +33,19 @@ class CreateUsersTable extends Migration
             $table->string( 'last_name' )->nullable()->default( null );
             $table->string( 'status', 16 )->default( STATUS_INITIAL );
 
-            $table->string( 'locale', 5 )->default( 'ko_KR' )->comment( 'll_CC. ll is ISO 639-1 language code alpha2, CC is ISO 3166-2 alpha2' );
-            $table->string( 'country', 2 )->nullable( 'KR' )->comment( 'ISO 3166-2 alpha2' );
+            $table->string( 'locale', 8 )->default( 'ko' )->comment( 'https://www.w3schools.com/tags/ref_language_codes.asp' );
+            $table->string( 'country', 3 )->nullable( 'KR' )->comment( 'ISO 3166-2 alpha3' );
             $table->string( 'phone_country', 4 )->nullable();
             $table->string( 'phone_area', 4 )->nullable();
             $table->string( 'phone_number', 16 )->nullable();
 
             $table->rememberToken();
-            $table->string( 'api_token' )->unique()->nullable()->default( null );
-
+            $table->string( 'email_verified_token' )->nullable()->comment( 'email 인증 토큰' );
             $table->timestamp( 'email_verified_at' )->nullable();
+
             $table->timestamps();
+            $table->softDeletes();
+
         } );
 
         Artisan::call( 'db:seed', array( '--class' => 'UsersTableSeeder' ) );
