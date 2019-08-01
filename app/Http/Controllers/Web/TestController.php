@@ -9,8 +9,16 @@ class TestController extends Controller
 {
     public function index( Request $request )
     {
-        echo date( 'Ymd His' ) . lang( 'promise.adbc' );
+        //echo date( 'Ymd His' ) . lang( 'promise.adbc' );
 
-        return \Socialite::with( 'kakao' )->stateless()->redirect()->getTargetUrl();
+        return \Socialite::with( 'kakao' )->stateless()->redirect();
     }
+
+    public function auth( Request $request )
+    {
+        $user = \Socialite::with( 'kakao' )->user();
+
+        return 'OK';
+    }
+
 }
