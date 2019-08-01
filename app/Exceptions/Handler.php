@@ -3,9 +3,21 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Session\TokenMismatchException;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Validation\ValidationException;
+use Symfony\Component\Debug\Exception\FlattenException;
+use Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException;
+use Symfony\Component\HttpFoundation\Response as HTTP;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -58,8 +70,12 @@ class Handler extends ExceptionHandler
 
     protected function responseJson( Exception $e )
     {
-        if ( $e instanceof AuthenticationException ) {
-            return Response::unauthorized( lang( 'auth.unauthorized' ) );
+        if ( $e instanceof NotFoundHttpException ) {
+            $e = new HttpException( HTTP::HTTP_NOT_FOUND, $e->getMessage() ?: lang( 'exception.notfound' ), $e );
+        } elseif ( $e instanceof TokenMismatchException ) {
+            $e = new HttpException( 419, $e->getMessage(), $e );
+        } elseif ( $e instanceof AuthenticationException ) {
+            $e = new HttpException( HTTP::HTTP_UNAUTHORIZED, lang( 'auth.unauthorized' ), $e );
         }
 
         return Response::exception( $e );

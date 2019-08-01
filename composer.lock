@@ -1230,7 +1230,7 @@
             "source": {
                 "type": "git",
                 "url": "D:\\03.WorkSpace\\P.Packages\\lib-helpers-php",
-                "reference": "a0eee802135bf6d910d471706279c4407a03c1c6"
+                "reference": "678d9dd1b51519bff1786b3dbf1b476c1e241b0d"
             },
             "require": {
                 "php": "^5.3|^7.0",
@@ -1271,7 +1271,7 @@
                 "helper",
                 "php"
             ],
-            "time": "2019-07-31T18:28:43+00:00"
+            "time": "2019-07-31T19:22:32+00:00"
         },
         {
             "name": "lazylogic/laravel-additive",
@@ -1279,7 +1279,7 @@
             "source": {
                 "type": "git",
                 "url": "D:\\03.WorkSpace\\P.Packages\\laravel-additive",
-                "reference": "0cc45f188375e0481d1eb25e50fa7b3918bef397"
+                "reference": "c8ef19ec56d967200e70edbd17dae3b6a9223ea9"
             },
             "require": {
                 "lazylogic/helpers": "dev-master",
@@ -1328,7 +1328,7 @@
                 "laravel",
                 "php"
             ],
-            "time": "2019-07-31T19:18:16+00:00"
+            "time": "2019-08-01T23:42:58+00:00"
         },
         {
             "name": "lcobucci/jwt",
