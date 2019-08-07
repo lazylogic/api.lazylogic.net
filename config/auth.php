@@ -36,18 +36,12 @@ return [
      */
 
     'guards'    => [
-        'web'   => [             // 기본 설정 : 16라인 defaults 참조
+        'web' => [               // 기본 설정 : 16라인 defaults 참조
             'driver'   => 'session', // AuthManager::createSessionDriver()
             'provider' => 'users',
         ],
 
-        'api'   => [              // middleware( 'auth:api' ) 와 같이 지정 되었을 경우
-            'driver'   => 'passport', // AuthManager::createTokenDriver() or callCustomCreator()
-            'provider' => 'users',
-            'hash'     => false,
-        ],
-
-        'oauth' => [              // middleware( 'auth:oauth' ) 와 같이 지정 되었을 경우
+        'api' => [                // middleware( 'auth:api' ) 와 같이 지정 되었을 경우
             'driver'   => 'passport', // AuthManager::createTokenDriver() or callCustomCreator()
             'provider' => 'users',
             'hash'     => false,

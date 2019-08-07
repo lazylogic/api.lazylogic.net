@@ -31,7 +31,7 @@ return [
     'connections' => [
 
         'sync'       => [
-            'driver' => 'redis', //'sync',
+            'driver' => 'sync',
         ],
 
         'database'   => [

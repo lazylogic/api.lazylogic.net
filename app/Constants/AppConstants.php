@@ -84,10 +84,35 @@ defined( 'ROLE_OFFICIAL' ) or define( 'ROLE_OFFICIAL', 0x0108 ); // OxFF08  0000
 defined( 'ROLE_MEMBER' ) or define( 'ROLE_MEMBER', 0x0100 );     // Ox0100  0000 0001 0000 0000     MEMBER
 defined( 'ROLE_PROVIDER' ) or define( 'ROLE_PROVIDER', 0x0300 ); // Ox0300  0000 0011 0000 0000     MEMBER + PROVIDER
 
+defined( 'TYPE_ROLL' ) or define( 'TYPE_ROLL', [
+    TYPE_ADMIN    => ROLE_ADMIN,
+    TYPE_MANAGER  => ROLE_MANAGER,
+    TYPE_OPERATOR => ROLE_OPERATOR,
+    TYPE_OFFICIAL => ROLE_OFFICIAL,
+    TYPE_MEMBER   => ROLE_MEMBER,
+    PRIV_PROVIDER => ROLE_PROVIDER,
+] );
+
+defined( 'ROLL_TYPE' ) or define( 'ROLL_TYPE', [
+    ROLE_ADMIN    => TYPE_ADMIN,
+    ROLE_MANAGER  => TYPE_MANAGER,
+    ROLE_OPERATOR => TYPE_OPERATOR,
+    ROLE_OFFICIAL => TYPE_OFFICIAL,
+    ROLE_MEMBER   => TYPE_MEMBER,
+    ROLE_PROVIDER => PRIV_PROVIDER,
+] );
+
 /*
  * Patterns
  */
 // ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$
 // (?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
-defined( 'PATTERN_PASSWD' ) or define( 'PATTERN_PASSWD', '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/i' );
-defined( 'PATTERN_PASSWD_LEN' ) or define( 'PATTERN_PASSWD_LEN', '/^(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/i' );
+defined( 'REGEX_PASSWD' ) or define( 'REGEX_PASSWD', '(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*' );
+defined( 'PATTERN_PASSWD' ) or define( 'PATTERN_PASSWD', '/^' . REGEX_PASSWD . '$/i' );
+defined( 'PATTERN_PASSWD_LEN' ) or define( 'PATTERN_PASSWD_LEN', '/^(?=^.{4,32}$)' . REGEX_PASSWD . '$/i' );
+
+/*
+ * Foramtes
+ */
+defined( 'FORMAT_SQL_DATE' ) or define( 'FORMAT_SQL_DATE', 'Ymd' );
+defined( 'FORMAT_SQL_DATETIME' ) or define( 'FORMAT_SQL_DATETIME', 'YmdHis' );

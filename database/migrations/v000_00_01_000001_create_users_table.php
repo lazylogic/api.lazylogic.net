@@ -42,6 +42,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->string( 'email_verified_token' )->nullable()->comment( 'email 인증 토큰' );
             $table->timestamp( 'email_verified_at' )->nullable();
+            $table->timestamp( 'loggedin_at' )->nullable();
 
             $table->timestamps();
             $table->softDeletes();

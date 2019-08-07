@@ -15,6 +15,12 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+
+        // Notification Logging
+        'Illuminate\Notifications\Events\NotificationSent'    => [
+            'App\Listeners\LogNotification',
+        ],
+
         Registered::class                                     => [
             SendEmailVerificationNotification::class,
         ],
@@ -25,6 +31,7 @@ class EventServiceProvider extends ServiceProvider
             'SocialiteProviders\\Kakao\\KakaoExtendSocialite@handle',
             'SocialiteProviders\\Naver\\NaverExtendSocialite@handle',
         ],
+
     ];
 
     /**
